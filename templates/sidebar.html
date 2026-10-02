@@ -1,0 +1,35 @@
+<div class="bg-dark text-white p-3 vh-100">
+
+    <h4>Dashboard</h4>
+    <hr>
+
+    {% if current_user.role == "admin" %}
+        <a href="{{ url_for('auth.admin_dashboard') }}"
+           class="btn btn-dark w-100 mb-2">
+            Admin Dashboard
+        </a>
+    {% endif %}
+
+        <a href="{{ url_for('product.add_dashboard') }}"
+           class="btn btn-dark w-100 mb-2">
+            Add Dashboard
+        </a>
+    {% endif %}
+    
+        <a href="{{ url_for('auth.dashboard') }}"
+           class="btn btn-dark w-100 mb-2">
+            User Dashboard
+        </a>
+    {% endif %}
+
+    <a href="{{ url_for('product.view_products') }}"
+       class="btn btn-dark w-100 mb-2">
+        Products
+    </a>
+
+    <a href="{{ url_for('auth.logout') }}"
+       class="btn btn-danger w-100 mb-2">
+        Logout
+    </a>
+
+</div>
